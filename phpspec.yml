@@ -1,0 +1,5 @@
+suites:
+    suite:
+        namespace: Kayue\Postmen
+        psr4_prefix: Kayue\Postmen
+        src_path: src

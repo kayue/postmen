@@ -1,0 +1,24 @@
+{
+    "name": "kayue/postmen",
+    "description": "Unofficial Postmen API",
+    "require": {
+        "guzzle/guzzle": "~3.9"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kayue\\Postment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kayue",
+            "email": "kayuey@gmail.com"
+        }
+    ]
+}
