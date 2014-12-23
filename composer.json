@@ -5,14 +5,14 @@
         "guzzle/guzzle": "~3.9"
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.0"
+        "phpspec/phpspec": "~2.1"
     },
     "config": {
         "bin-dir": "bin"
     },
     "autoload": {
         "psr-4": {
-            "Kayue\\Postment\\": "src/"
+            "Kayue\\Postmen\\": "src/"
         }
     },
     "authors": [
