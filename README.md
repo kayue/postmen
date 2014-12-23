@@ -3,6 +3,8 @@ Postmen PHP library
 
 This is an unofficial [Postmen](http://postmen.com) PHP library.
 
+[![Build Status](https://travis-ci.org/kayue/postmen.png?branch=master)](https://travis-ci.org/kayue/postmen)
+
 Quick Installation
 -------
 
