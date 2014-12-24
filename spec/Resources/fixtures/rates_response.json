@@ -1,0 +1,414 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "data": {
+        "rates": [
+            {
+                "shipper_account": {
+                    "slug": "fedex",
+                    "account_options": {
+                        "account_number": "FEDEX_ACCOUNT_NUMBER",
+                        "key": "FEDEX_KEY",
+                        "password": "FEDEX_PASSWORD",
+                        "meter_number": "FEDEX_METER_NUMBER"
+                    }
+                },
+                "service_name": "Fedex International First",
+                "service_type": "fedex_international_first",
+                "service_options": null,
+                "pickup_info": null,
+                "delivery_info": null,
+                "charge_gross_weight": 0.5,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": "kg",
+                "charge_currency": "HKD",
+                "total_charge": 1228.28,
+                "detail_charges": [
+                    {
+                        "type": "TotalBaseCharge",
+                        "amount": 1072.73
+                    },
+                    {
+                        "type": "TotalTaxes",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Residential delivery",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Fuel",
+                        "amount": 155.55
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "fedex",
+                    "account_options": {
+                        "account_number": "FEDEX_ACCOUNT_NUMBER",
+                        "key": "FEDEX_KEY",
+                        "password": "FEDEX_PASSWORD",
+                        "meter_number": "FEDEX_METER_NUMBER"
+                    }
+                },
+                "service_name": "Fedex International Priority",
+                "service_type": "fedex_international_priority",
+                "service_options": null,
+                "pickup_info": null,
+                "delivery_info": null,
+                "charge_gross_weight": 0.5,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": "kg",
+                "charge_currency": "HKD",
+                "total_charge": 540.44,
+                "detail_charges": [
+                    {
+                        "type": "TotalBaseCharge",
+                        "amount": 858.18
+                    },
+                    {
+                        "type": "TotalTaxes",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Residential delivery",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Fuel",
+                        "amount": 68.44
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "fedex",
+                    "account_options": {
+                        "account_number": "FEDEX_ACCOUNT_NUMBER",
+                        "key": "FEDEX_KEY",
+                        "password": "FEDEX_PASSWORD",
+                        "meter_number": "FEDEX_METER_NUMBER"
+                    }
+                },
+                "service_name": "Fedex International Economy",
+                "service_type": "fedex_international_economy",
+                "service_options": null,
+                "pickup_info": null,
+                "delivery_info": null,
+                "charge_gross_weight": 0.5,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": "kg",
+                "charge_currency": "HKD",
+                "total_charge": 513.43,
+                "detail_charges": [
+                    {
+                        "type": "TotalBaseCharge",
+                        "amount": 815.3
+                    },
+                    {
+                        "type": "TotalTaxes",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Residential delivery",
+                        "amount": 0
+                    },
+                    {
+                        "type": "Fuel",
+                        "amount": 65.02
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Medical Express",
+                "service_type": "dhl_medical_express",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "10:30:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 48.65,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 48.65
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express 1030",
+                "service_type": "dhl_express_1030",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "10:30:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 83.89,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 83.89
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express 1200",
+                "service_type": "dhl_express_1200",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "12:00:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 61.53,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 61.53
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express Worldwide",
+                "service_type": "dhl_express_worldwide",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "23:59:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 55.95,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 55.95
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL B2C",
+                "service_type": "dhl_b2c",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "23:59:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": null,
+                "total_charge": 0,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 0
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express Easy",
+                "service_type": "dhl_express_easy",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "23:59:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 0,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 0
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express Easy",
+                "service_type": "dhl_express_easy",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "23:59:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 0,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 0
+                    }
+                ]
+            },
+            {
+                "shipper_account": {
+                    "slug": "dhl",
+                    "account_options": {
+                        "account_number": "DHL_ACCOUNT_NUMBER",
+                        "region": "AP",
+                        "password": "DHL_PASSWORD",
+                        "site_id": "DHL_SITE_ID"
+                    }
+                },
+                "service_name": "DHL Express Worldwide",
+                "service_type": "dhl_express_worldwide",
+                "service_options": null,
+                "pickup_info": {
+                    "pick_up_deadline_date": "2014-12-22",
+                    "pick_up_deadline_time": "23:30:00",
+                    "booking_cut_off_date": "2014-12-22",
+                    "booking_cut_off_time": "19:00:00"
+                },
+                "delivery_info": {
+                    "delivery_date": "2014-12-23",
+                    "delivery_time": "23:59:00",
+                    "total_transit_day": "1"
+                },
+                "charge_gross_weight": null,
+                "charge_dimensional_weight": null,
+                "charge_weight_unit": null,
+                "charge_currency": "GBP",
+                "total_charge": 55.95,
+                "detail_charges": [
+                    {
+                        "type": "WEIGHT_CHARGE",
+                        "amount": 55.95
+                    }
+                ]
+            }
+        ]
+    }
+}

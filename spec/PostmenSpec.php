@@ -2,6 +2,9 @@
 
 namespace spec\Kayue\Postmen;
 
+use Guzzle\Http\Client;
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Message\Response;
 use Kayue\Postmen\Object\Address;
 use Kayue\Postmen\Object\Box;
 use Kayue\Postmen\Object\Package;
@@ -24,17 +27,17 @@ class PostmenSpec extends ObjectBehavior
         $this->shouldHaveType('Kayue\Postmen\Postmen');
     }
 
-    function it_should_return_guzzle_client()
+    function it_returns_guzzle_client()
     {
         $this->getClient()->shouldReturnAnInstanceOf('Guzzle\Http\Client');
     }
 
-    function it_should_return_request_with_api_key()
+    function it_returns_request_with_api_key()
     {
         $this->getClient()->get()->getHeader('postmen-api-key')->hasValue(self::API_KEY)->shouldReturn(true);
     }
 
-    function it_return_shipper_accounts()
+    function it_returns_shipper_accounts()
     {
         $fedexAccount = new ShipperAccount('fedex', [
             'account_number' => 'FEDEX_ACCOUNT_NUMBER',
@@ -59,15 +62,13 @@ class PostmenSpec extends ObjectBehavior
         $this->getShipperAccounts()->shouldNotContain(new ShipperAccount('sf_express'));
     }
 
-    function it_should_return_rates()
+    function it_returns_rates(Client $client, Request $request, Response $response)
     {
-        $box = new Box();
-        $box->setWeight(0.1);
-        $box->setDepth(38);
-        $box->setWidth(4);
-        $box->setHeight(1);
-        $package = new Package();
-        $package->setBox($box);
+        $this->beConstructedWith(self::API_KEY, $client);
+
+        $package = new Package([
+            'box' => new Box(['weight' => 0.1, 'depth' => 38, 'width' => 4, 'height' => 1])
+        ]);
         $shipment = new Shipment();
         $shipment->setShipFrom(new Address(['country'=>'HKG']));
         $shipment->setShipTo(new Address(['country'=>'USA']));
@@ -80,10 +81,16 @@ class PostmenSpec extends ObjectBehavior
             'meter_number' => 'CHANGEME',
         ]));
 
-        $this->getRates($shipment);
+        $client->post('/v2/rates', null, Argument::containingString('shipper_accounts'))->shouldBeCalled()->willReturn($request);
+        $request->send()->shouldBeCalled()->willReturn($response);
+        $response->getStatusCode()->willReturn(200);
+        $response->setBody(file_get_contents('spec/Resources/fixtures/rates_response.json'));
+        $response->json()->shouldBeCalled()->willReturn(json_decode(file_get_contents('spec/Resources/fixtures/rates_response.json'), true));
+
+        $this->getRates($shipment)->shouldReturnAnInstanceOf('Kayue\Postmen\Result\Result');
     }
 
-    function it_throw_exception_when_no_shipper_account()
+    function it_throws_exception_when_no_shipper_account()
     {
         $this->shouldThrow('\RuntimeException')->during('getRates', [new Shipment()]);
     }

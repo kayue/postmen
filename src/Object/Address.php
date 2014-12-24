@@ -21,13 +21,6 @@ class Address extends AbstractObject
     protected $postalCode;
     protected $country;
 
-    function __construct(array $options = [])
-    {
-        foreach ($options as $key => $value) {
-            $this->$key = $value;
-        }
-    }
-
     public function getAddressLine1()
     {
         return $this->addressLine1;

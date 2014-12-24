@@ -14,7 +14,7 @@ class PackageSpec extends ObjectBehavior
         $this->shouldHaveType('Kayue\Postmen\Object\Package');
     }
 
-    function it_return_description()
+    function it_returns_description()
     {
         $this->setDescription('The description of the package.');
         $this->getDescription()->shouldReturn('The description of the package.');
@@ -26,19 +26,19 @@ class PackageSpec extends ObjectBehavior
         $this->getType()->shouldReturn('liquid');
     }
 
-    function it_throw_exception_if_type_is_not_allowed()
+    function it_throwss_exception_if_type_is_not_allowed()
     {
         $this->setType('bomb')->shouldThrow('\InvalidArgumentException');
     }
 
-    function it_return_box()
+    function it_returns_box()
     {
         $box = new Box();
         $this->setBox($box);
         $this->getBox()->shouldReturn($box);
     }
 
-    function it_return_items()
+    function it_returns_items()
     {
         $item1 = new Item();
         $item2 = new Item();

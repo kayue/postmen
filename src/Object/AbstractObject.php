@@ -6,6 +6,13 @@ use JsonSerializable;
 
 abstract class AbstractObject implements JsonSerializable
 {
+    function __construct(array $options = [])
+    {
+        foreach ($options as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
     public function jsonSerialize()
     {
         $result = [];

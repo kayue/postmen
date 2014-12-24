@@ -5,32 +5,37 @@ namespace Kayue\Postmen;
 use Guzzle\Http\Client;
 use Kayue\Postmen\Object\Shipment;
 use Kayue\Postmen\Object\ShipperAccount;
+use Kayue\Postmen\Result\ResultFactory;
 use RuntimeException;
 
 /**
- * Class Postmen
- *
  * @see https://www.postmen.com/api
  */
 class Postmen
 {
     protected $apiKey;
+    protected $client = null;
     protected $shipperAccounts = [];
 
-    public function __construct($apiKey)
+    public function __construct($apiKey, Client $client = null)
     {
         $this->apiKey = $apiKey;
+        $this->client = $client;
     }
 
     public function getClient()
     {
-        $client = new Client($this->getApiEndpoint());
-        $client->setDefaultOption('headers', [
-            'postmen-api-key' => $this->apiKey,
-            'Content-Type' => 'application/json',
-        ]);
+        if (null === $this->client) {
+            $client = new Client($this->getApiEndpoint());
+            $client->setDefaultOption('headers', [
+                'postmen-api-key' => $this->apiKey,
+                'Content-Type' => 'application/json',
+            ]);
 
-        return $client;
+            $this->client = $client;
+        }
+
+        return $this->client;
     }
 
     private function getApiEndpoint()
@@ -56,11 +61,12 @@ class Postmen
 
         $body = [
             'shipper_accounts' => $this->getShipperAccounts(),
-            'shipment' => $shipment
+            'shipment' => $shipment,
         ];
 
         $request = $this->getClient()->post('/v2/rates', null, json_encode($body));
+        $response = ResultFactory::create($request->send());
 
-        print_r($request->send()->json());
+        return $response;
     }
 }

@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "code": 2002,
+        "type": "Warning",
+        "message": "Some warnings in get rate.",
+        "errors": {
+            "shipper_account.slug.fedex": "Authentication Failed"
+        }
+    },
+    "data": {
+        "rates": []
+    }
+}
