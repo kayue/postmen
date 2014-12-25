@@ -2,6 +2,7 @@
     "name": "kayue/postmen",
     "description": "Unofficial Postmen API",
     "require": {
+        "doctrine/inflector" : "~1",
         "guzzle/guzzle": "~3.9"
     },
     "require-dev": {
@@ -17,7 +18,7 @@
     },
     "authors": [
         {
-            "name": "kayue",
+            "name": "Ka-Yue Yeung",
             "email": "kayuey@gmail.com"
         }
     ]

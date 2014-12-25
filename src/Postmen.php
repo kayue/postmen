@@ -50,23 +50,44 @@ class Postmen
 
     public function getShipperAccounts()
     {
+        if (empty($this->shipperAccounts)) {
+            throw new RuntimeException('No shipper account is specified.');
+        }
+
         return $this->shipperAccounts;
     }
 
     public function getRates(Shipment $shipment)
     {
-        if (empty($this->shipperAccounts)) {
-            throw new RuntimeException('No shipper account is specified.');
-        }
-
         $body = [
             'shipper_accounts' => $this->getShipperAccounts(),
             'shipment' => $shipment,
         ];
 
         $request = $this->getClient()->post('/v2/rates', null, json_encode($body));
-        $response = ResultFactory::create($request->send());
 
-        return $response;
+        return ResultFactory::create($request->send());
+    }
+
+    public function createLabel($serviceType, Shipment $shipment)
+    {
+        $body = [
+            'shipper_account' => $this->getShipperAccounts()[0],
+            'service_type' => $serviceType,
+            'shipment' => $shipment
+        ];
+
+        $request = $this->getClient()->post('/v2/labels', null, json_encode($body));
+        $response = $request->send();
+
+        return ResultFactory::create($response);
+    }
+
+    public function getLabel($id)
+    {
+        $request = $this->getClient()->get('/v2/labels/'.$id);
+        $response = $request->send();
+
+        return ResultFactory::create($response);
     }
 }

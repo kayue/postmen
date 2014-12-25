@@ -9,13 +9,13 @@ class ResultFactory
 {
     static function create(Response $response)
     {
-        if ($response->getStatusCode() !== 200) {
+        if ($response->getStatusCode() >= 300) {
             throw BadResponseException::factory($response);
         }
 
         $json = $response->json();
 
-        if (!isset($json['meta']['code']) || $json['meta']['code'] !== 200) {
+        if (!isset($json['meta']['code']) || $json['meta']['code'] >= 200) {
             throw BadResponseException::factory($response);
         }
 

@@ -1,0 +1,44 @@
+{
+    "meta": {
+        "code": 4703,
+        "type": "BadRequest",
+        "message": "Create label error ",
+        "errors": {
+            "shipment_packages_items": "items is missing"
+        }
+    },
+    "data": {
+        "shipper_account": {
+            "slug": "fedex",
+            "account_options": {
+                "account_number": "CHANGEME",
+                "key": "CHANGEME",
+                "password": "CHANGEME",
+                "meter_number": "CHANGEME"
+            }
+        },
+        "service_type": "fedex_international_economy",
+        "shipment": {
+            "ship_to": {
+                "country": "USA"
+            },
+            "ship_from": {
+                "country": "HKG"
+            },
+            "packages": [
+                {
+                    "box": {
+                        "depth": 38,
+                        "dimension_unit": "cm",
+                        "height": 1,
+                        "type": "custom",
+                        "weight": 0.1,
+                        "weight_unit": "kg",
+                        "width": 4
+                    },
+                    "items": []
+                }
+            ]
+        }
+    }
+}

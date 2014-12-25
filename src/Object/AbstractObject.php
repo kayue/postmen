@@ -2,6 +2,7 @@
 
 namespace Kayue\Postmen\Object;
 
+use Doctrine\Common\Inflector\Inflector;
 use JsonSerializable;
 
 abstract class AbstractObject implements JsonSerializable
@@ -32,16 +33,10 @@ abstract class AbstractObject implements JsonSerializable
                 $value = $value->jsonSerialize();
             }
 
-            $key = $this->convertCamelcaseToUnderscore(substr($method, 3));
+            $key = Inflector::tableize(substr($method, 3));
             $result[$key] = $value;
         }
 
         return $result;
-    }
-
-    private function convertCamelcaseToUnderscore($string)
-    {
-        $string = preg_replace('/(?<=\\w)(?=[A-Z])/',"_$1", $string);
-        return strtolower($string);
     }
 }

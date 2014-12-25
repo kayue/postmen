@@ -13,13 +13,13 @@ class BadResponseException extends Exception
 
     public static function factory(Response $response)
     {
-        if ($response->getStatusCode() !== 200) {
+        if ($response->getStatusCode() >= 300) {
             return new BadResponseException("Postmen server return error {$response->getStatusCode()}");
         }
 
         $json = $response->json();
 
-        if ($json['meta']['code'] !== 200) {
+        if ($json['meta']['code'] >= 300) {
             if (isset($json['meta']['message'])) {
                 return new BadResponseException($json['meta']['message']);
             }
