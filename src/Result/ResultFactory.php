@@ -15,7 +15,7 @@ class ResultFactory
 
         $json = $response->json();
 
-        if (!isset($json['meta']['code']) || $json['meta']['code'] >= 200) {
+        if (!isset($json['meta']['code']) || $json['meta']['code'] >= 300) {
             throw BadResponseException::factory($response);
         }
 
