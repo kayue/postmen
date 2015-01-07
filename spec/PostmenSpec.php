@@ -91,8 +91,10 @@ class PostmenSpec extends ObjectBehavior
         $this->getRates($shipment)->shouldReturnAnInstanceOf('Kayue\Postmen\Result\Result');
     }
 
-    function it_create_label()
+    function it_creates_queued_label(Client $client, Request $request, Response $response)
     {
+        $this->beConstructedWith(self::API_KEY, $client);
+
         $box = new Box(['weight' => 0.1, 'depth' => 38, 'width' => 4, 'height' => 1]);
         $package = new Package();
         $package->setBox($box);
@@ -141,12 +143,15 @@ class PostmenSpec extends ObjectBehavior
             'meter_number' => 'CHANGEME',
         ]));
 
-        $this->createLabel('fedex_international_economy', $shipment);
-    }
+        $client->post('/v2/labels', null, Argument::containingString('shipper_account'))->shouldBeCalled()->willReturn($request);
+        $request->send()->shouldBeCalled()->willReturn($response);
+        $response->getStatusCode()->willReturn(200);
+        $response->setBody(file_get_contents('spec/Resources/fixtures/create_label_queued_response.json'));
+        $response->json()->shouldBeCalled()->willReturn(json_decode(file_get_contents('spec/Resources/fixtures/create_label_queued_response.json'), true));
 
-    function it_retrieve_label()
-    {
-        $this->getLabel('549bb537bcc1be36119a9424');
+        $result = $this->createLabel('fedex_international_economy', $shipment);
+        $result->shouldBeAnInstanceOf('Kayue\Postmen\Result\Result');
+        $result->getData()->shouldHaveKey('label');
     }
 
     function it_throws_exception_when_no_shipper_account()
