@@ -19,12 +19,29 @@ $postmen->addShipperAccount(new ShipperAccount('fedex', [
     'meter_number' => FEDEX_METER_NUMBER,
 ]));
 
-$package = new Package([
-    'box' => new Box(['weight' => 0.1, 'depth' => 38, 'width' => 4, 'height' => 1])
-]);
 $shipment = new Shipment();
-$shipment->setShipFrom(new Address(['country'=>'HKG']));
-$shipment->setShipTo(new Address(['country'=>'USA']));
+
+$shipment->setShipFrom(new Address([
+    'country' => 'HKG',
+]));
+
+$shipment->setShipTo(new Address([
+    'state' => 'CA',
+    'postalCode' => '92612',
+    'country' => 'USA',
+]));
+
+$package = new Package([
+    'box' => new Box([
+            'weight' => 4,
+            'width' => 15,
+            'height' => 15,
+            'depth' => 5,
+            'type' => BOX::TYPE_CUSTOM,
+            'dimensionUnit' => BOX::DIMENSION_UNIT_IN,
+        ])
+]);
+
 $shipment->addPackage($package);
 
 echo "<pre>";

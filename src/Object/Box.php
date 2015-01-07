@@ -4,6 +4,18 @@ namespace Kayue\Postmen\Object;
 
 class Box extends AbstractObject
 {
+    const WEIGHT_UNIT_KG = 'kg';
+    const WEIGHT_UNIT_LB = 'lb';
+    const TYPE_CUSTOM = 'custom';
+    const TYPE_TUBE = 'tube';
+    const TYPE_PAK = 'fedex_pak';
+    const TYPE_BOX_SMALL = 'box_small';
+    const TYPE_BOX_MEDIUM = 'box_medium';
+    const TYPE_BOX_LARGE = 'box_large';
+    const TYPE_BOX_XLARGE = 'box_xlarge';
+    const DIMENSION_UNIT_CM = 'cm';
+    const DIMENSION_UNIT_IN = 'in';
+
     protected $name;
     protected $type = 'custom';
     protected $acceptCustom;
