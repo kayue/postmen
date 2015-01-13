@@ -8,7 +8,7 @@ class Box extends AbstractObject
     const WEIGHT_UNIT_LB = 'lb';
     const TYPE_CUSTOM = 'custom';
     const TYPE_TUBE = 'tube';
-    const TYPE_PAK = 'fedex_pak';
+    const TYPE_FEDEX_PAK = 'fedex_pak';
     const TYPE_BOX_SMALL = 'box_small';
     const TYPE_BOX_MEDIUM = 'box_medium';
     const TYPE_BOX_LARGE = 'box_large';
